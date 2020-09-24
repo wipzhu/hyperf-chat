@@ -11,17 +11,18 @@ use Hyperf\Utils\Codec\Json;
 use Hyperf\Utils\Context;
 use Phper666\JWTAuth\JWT;
 use Psr\Http\Message\ServerRequestInterface;
+use Throwable;
 
 if (!function_exists('autoHidSubstr')) {
     /**
      * 智能字符串模糊化
      *
      * @param string $str 被模糊的字符串
-     * @param int    $len 模糊的长度
+     * @param int $len 模糊的长度
      *
      * @return string
      */
-    function autoHidSubstr($str, $len = 3)
+    function autoHidSubstr(string $str, $len = 3)
     {
         if (empty($str)) {
             return NULL;
